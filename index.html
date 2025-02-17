@@ -30,91 +30,7 @@
         <link rel="preload" fetchpriority="high" media="(min-width: 764px)" as="image" href="https://cdn.lugc.link/af147f76-90fd-42b0-9e45-83a2392de371/-/format/auto/-/stretch/off/-/resize/360x/">
         <link rel="preload" fetchpriority="high" media="(min-width: 764px)" as="image" href="https://cdn.lugc.link/b9573045-7ea6-4e63-84fc-3fcce8ae7159/-/format/auto/-/stretch/off/-/resize/x3000/">
         <link rel="preload" fetchpriority="high" media="(max-width: 763px)" as="image" href="https://cdn.lugc.link/af147f76-90fd-42b0-9e45-83a2392de371/-/format/auto/-/stretch/off/-/resize/261x/">
-        <script type="text/javascript" async="" charset="utf-8" src="files/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-3wmc1Bh1cCJW+fASaBmsSdAIwB8jgncUQXdLNwTeFRWYZhdATgEib2Aeg4rtm7Yi"></script><script>
-            const verifyRecaptchaOnSubmit = function (e) {
-              e.preventDefault();
-              showButtonSpinner($(this));
-              const recaptchaAction = 'landing_form_submit';
-              let that = this;
-              grecaptcha.execute('6LdKrHsjAAAAABdQ3WpMFH24cXPVkm1YA-KQWjW-', {action: recaptchaAction})
-                .then(function (token) {
-                    $(that).parents('form').prepend('<input type="hidden" name="g-recaptchav3-token" value="' + token + '">');
-                    hideButtonSpinner($(that));
-                    $(that).unbind('click', verifyRecaptchaOnSubmit).click();
-                  }
-                );
-            }
-            
-            const showButtonSpinner = function (button) {
-              let overlay = button.find('.widget-overlay');
-              overlay.css('color', button.css('color'))
-                .append('<i class="fa fa-spinner fa-spin"></i>');
-              button.css('color', 'transparent');
-            }
-            
-            const hideButtonSpinner = function (button) {
-              let overlay = button.find('.widget-overlay');
-              button.css('color', '');
-              overlay.empty();
-            }
-            
-            const injectRecaptchaScript = function () {
-              if (window.isRecaptchaScriptInjected) {
-                return;
-              }
-              
-              window.isRecaptchaScriptInjected = true;
-              let recaptchaScriptTag = document.createElement("script");
-              recaptchaScriptTag.type = "text/javascript";
-              recaptchaScriptTag.src = "https://www.google.com/recaptcha/api.js?render=6LdKrHsjAAAAABdQ3WpMFH24cXPVkm1YA-KQWjW-";
-              $("head").append(recaptchaScriptTag);
-            }
-            
-            function initRecaptchaOnFormSubmit(formSelector) {  
-              let forms = $(formSelector).filter(function () {
-                return $('.g-recaptcha', this).length === 0;
-              });
-            
-              if (forms.length > 0) {
-                injectRecaptchaScript();
-                forms.each(function () {
-                  $('button[type="submit"]', this).click(verifyRecaptchaOnSubmit);
-                });
-              }
-            }
-            
-            function initRecaptchaOnEvent(event) {
-              event.currentTarget.removeEventListener(event.type, initRecaptchaOnEvent);
-                
-              if (window.isRecaptchaInitialized) {
-                return;
-              }
-            
-              window.isRecaptchaInitialized = true;
-              initRecaptchaOnFormSubmit('.widget-section form, .widget-smartsection form');
-            }
-            
-            function waitForJQuery(method) {
-                if (window.jQuery) {
-                    method(); 
-                } else {
-                    setTimeout(function() { waitForJQuery(method) }, 100);
-                }
-            }
-            
-            waitForJQuery(function () {
-              $('head').on('lightboxes-ready', function () {
-                if (window.isRecaptchaInitialized && !window.isRecaptchaInitializedForLightboxes) {
-                  window.isRecaptchaInitializedForLightboxes = true;
-                  initRecaptchaOnFormSubmit('.landingi-popup form');
-                } /* no else here, selector ".widget-section form" will bind forms from lightboxes on event */
-              });
-            
-              document.addEventListener('scroll', initRecaptchaOnEvent);
-              document.addEventListener('mousemove', initRecaptchaOnEvent);
-              document.addEventListener('touchstart', initRecaptchaOnEvent);
-            });
-        </script>
+        
         <style>
             .grecaptcha-badge {
             width: 70px !important;
@@ -138,31 +54,7 @@
             }
             }
         </style>
-        <script fetchpriority="high">
-            (function(src, cb) {
-             var s = document.createElement('script'); s.setAttribute('src', src); s.setAttribute('fetchpriority', 'high');
-             s.onload = cb; (document.head || document.body).appendChild(s);
-            })('https://ucarecdn.com/libs/blinkloader/3.x/blinkloader.min.js', function() {
-             window.Blinkloader.optimize({
-               fadeIn:false,
-               lazyload:true,
-               smartCompression:true,
-               responsive:true,
-               retina:true,
-               webp:true,
-               pubkey:'ca6af56c901b93c58ffa',
-               cdnBase:'https://cdn.lugc.link'
-             });
-             
-             if (window.location !== window.parent.location) {
-                 window.onload = function() {
-                     setTimeout(function () {
-                         window.dispatchEvent(new CustomEvent('scroll'))
-                     }, 500);
-                 };
-             }
-            })
-        </script><script src="files/blinkloader.min.js" fetchpriority="high"></script>
+        
         <style>@media (min-width: 764px) { #P38wvwkBOITPa2RDf9tgTgaUHXHkFe7v { background-image: url("https://cdn.lugc.link/b9573045-7ea6-4e63-84fc-3fcce8ae7159/-/format/auto/-/stretch/off/-/resize/x3000/");}}</style>
         <style>@media (min-width: 764px) { body #vwpwlPI7tpflaivAWgxeI8C8sbtOuUdh { background-image: url("https://cdn.lugc.link/af147f76-90fd-42b0-9e45-83a2392de371/-/format/auto/-/stretch/off/-/resize/360x/");}}</style>
         <style>@media (max-width: 763px) { body #vwpwlPI7tpflaivAWgxeI8C8sbtOuUdh { background-image: url("https://cdn.lugc.link/af147f76-90fd-42b0-9e45-83a2392de371/-/format/auto/-/stretch/off/-/resize/261x/");}}</style>
@@ -173,85 +65,7 @@
         <link href="files/css(1)" type="text/css" rel="stylesheet" as="style" fetchpriority="high">
         <link href="files/280125-landend-base.css" type="text/css" rel="stylesheet" as="style">
         <link href="files/base.css" type="text/css" rel="stylesheet">
-        <script>
-            var landingiInternalDetails = {
-                'landing_id': '1713009',
-                'landing_hash': 'ac1968d329ff416e8843',
-                'landing_variant_hash': '',
-                'landing_name': 'www.kofoakadri.com',
-                'landing_lang': 'en',
-                'account_uuid': '55ba489b-c199-4201-8399-f2d12fa11ea5',
-                'apikey': '873edaed-b2b7-41d7-ac64-159e522583af'
-            }
-        </script><!-- Global site tag (gtag.js) - Google Ads: 723054314 -->
-        <script async="" src="files/js"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            
-            gtag('config', 'AW-16713989333');
-        </script>
         <link href="files/body_2025-02-14-01-10-08.css" rel="stylesheet" type="text/css">
-        <script>
-            (async function (w, d) {
-                try {
-                    const response = await w.fetch(
-                        'https://' + 'tagmanager.landingi.io' + '/account/' + '55ba489b-c199-4201-8399-f2d12fa11ea5'
-                    );
-                    const gtm = await response.json();
-            
-                    if (gtm) {
-                        const script = d.head.getElementsByTagName('script')[0];
-                        const tmpl = d.createElement('template');
-                        tmpl.innerHTML = gtm;
-                        tmpl.content.childNodes.forEach((node) => {
-                            let elem = node;
-            
-                            if ('SCRIPT' === node.nodeName) {
-                                elem = d.createElement('script');
-            
-                                if (node.textContent) {
-                                    elem.textContent = node.textContent;
-                                }
-            
-                                if (node.src) {
-                                    elem.src = node.src;
-                                    elem.type = node.type;
-                                }
-            
-                                script.parentNode.insertBefore(elem, script);
-                            }
-            
-                            if ('STYLE' === node.nodeName) {
-                                elem = d.createElement('style');
-            
-                                if (node.textContent) {
-                                    elem.textContent = node.textContent;
-                                }
-            
-                                script.parentNode.insertBefore(elem, script);
-                            }
-                        })
-                    }
-                } catch (err) {
-                    console.log(err);
-                }
-            })(window, document);
-        </script><script>
-            window.lazySizesConfig = window.lazySizesConfig || {};
-            window.lazySizesConfig.init = false;
-        </script>
-        <script data-cookieconsent="ignore" type="text/javascript" src="files/lazysizes.min.js"></script>
-        <script>
-            lazySizes.init();
-        </script><script defer="" fetchpriority="low" src="files/install-code"></script><script defer="" fetchpriority="low" src="files/lightbox-render.js"></script><script>
-            window.addEventListener('load', function () {
-                LightboxRender.init({
-                    useAaf: true
-                })
-            });
-        </script><script type="text/javascript" async="" src="files/f.txt"></script><script type="text/javascript" src="files/api.js"></script>
     </head>
     <body id="P38wvwkBOITPa2RDf9tgTgaUHXHkFe7v">
         <div id="hZ4X3tXvZQqlv1pTVVTJIx6USaEICR7Z" class="widget widget-section ">
@@ -424,28 +238,7 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="files/jquery-3-6-0.min.js" fetchpriority="high"></script><script defer="" type="text/javascript" src="files/030724-anchors.js"></script>        <script src="files/frodo.js"></script>
-        <script>
-            const lpStatsModule = (function () {    
-                const url = "https://stats.landingi.com/visit/1713009";
-                const data = {"lid":1713009,"luuid":"5770dbbe-d08f-42fd-9893-95cc99902ea6","lhash":"ac1968d329ff416e8843","fid":1713009,"auuid":"55ba489b-c199-4201-8399-f2d12fa11ea5","acid":287507,"agid":159629,"tid":null,"hasAccessToEventTracker":false,"hasAccessToEventTrackerDev":false,"hasAccessToEventTrackerData":false,"hasAccessToVisitWithoutCookie":false,"hasAccessToVisitWithLocalStorage":false,"hasAccessToExternalEvents":false};
-                const cookieName = "ls_sid_1713009";
-            
-                if (data.hasAccessToEventTrackerDev) { 
-                    console.log('Running runScript in dev mode')
-                    frodo.runScriptDev(cookieName, url, data)
-                } else {
-                    frodo.runScript(cookieName, url, data)
-                }
-            
-                return {
-                    getData: function() { return data; },
-                    cookieName: function() { return cookieName; },
-                    endpoint: function() { return url; },
-                    path: function() { return path; }
-                };
-            })();
-        </script><script defer="" type="text/javascript" src="files/files.js"></script><script defer="" fetchpriority="low" type="text/javascript" src="files/jquery.form.min.js"></script> <script type="text/javascript" src="files/new_landend.js"></script>
+
         <link rel="stylesheet" href="files/font-awesome.min.css">
         <style>
             .landend-infobar-light {
@@ -523,31 +316,5 @@
             }
             }
         </style>
-        <div class="landend-infobar-light">
-            <span class="landend-infobar-text">We and our partners use cookies to deliver our services. By using our website, you agree to the use of cookies as described in our privacy policy.</span>
-            <div class="landend-infobar-actions">
-                <a href="https://www.kofoakadri.com/privacypolicy" target="_blank" class="landend-infobar-light-btn">LEARN MORE</a>
-                <a target="_blank" class="landend-infobar-light-agree-btn infobar-close">Agree</a>
-            </div>
-        </div>
-        <iframe allow="join-ad-interest-group" data-tagging-id="AW-16713989333" data-load-time="1739802001271" height="0" width="0" src="files/16713989333.html" style="display: none; visibility: hidden;"></iframe><iframe height="0" width="0" style="display: none; visibility: hidden;" src="files/saved_resource.html"></iframe><script>
-            $(function() {
-                if (Cookies.get("infobar-close")) {
-                    $(".infobar-close").parent().parent().remove();
-                }
-                $(".infobar-close").on("click", function (event) { event.preventDefault();
-                    Cookies.set("infobar-close", 1, { expires: 30 });
-                    $(this).parent().parent().remove();
-                });
-            });
-        </script>
-        <div>
-            <div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;">
-                <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-mrmmr8m22kxb" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="files/anchor.html"></iframe></div>
-                <div class="grecaptcha-error"></div>
-                <textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-            </div>
-            <iframe style="display: none;" src="files/saved_resource(1).html"></iframe>
-        </div>
     </body>
 </html>
