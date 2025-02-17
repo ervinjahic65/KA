@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!-- saved from url=(0138)https://www.kofoakadri.com/?gad_source=1&gclid=CjwKCAiAqrG9BhAVEiwAaPu5zkKQqsMmivr-ypMT8-SOlDTXmZHGtki5AqFgkcgvnbVBZ6KqBqjHUxoCO5EQAvD_BwE -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="origin-trial" content="A/kargTFyk8MR5ueravczef/wIlTkbVk1qXQesp39nV+xNECPdLBVeYffxrM8TmZT6RArWGQVCJ0LRivD7glcAUAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZzIiLCJleHBpcnkiOjE3NDIzNDIzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="HandheldFriendly" content="true"><title>Kofo Akadri</title><meta name="description" content="Learn how to leverage technology and automation in your own business right from your phone and laptop"><meta name="keywords" content=""><style>
+        .animated-lightbox {
+          transition: visibility 0.5s, opacity 0.5s;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .show-lightbox {
+          opacity: 1;
+          display: block !important;
+          visibility: visible;
+        }
+    </style><link rel="shortcut icon" href="https://s3-eu-west-1.amazonaws.com/landingi-editor-uploads/oK39KzlMBFDwEzED/padlock.png" type="image/x-icon"><link rel="preconnect" href="https://styles.assets-landingi.com/"><link rel="preconnect" href="https://old.assets-landingi.com/"><link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://images.assets-landingi.com/"><link rel="preconnect" href="https://cdn.lugc.link/">
+<link rel="preload" fetchpriority="high" as="image" href="https://images.assets-landingi.com/g1Kr4Ozfoac/unsplash/brooke-cagle-g1Kr4Ozfoac-photo-1522202176988-66273c2fd55f.jpg"><link rel="preload" fetchpriority="high" media="(min-width: 764px)" as="image" href="https://cdn.lugc.link/af147f76-90fd-42b0-9e45-83a2392de371/-/format/auto/-/stretch/off/-/resize/360x/"><link rel="preload" fetchpriority="high" media="(min-width: 764px)" as="image" href="https://cdn.lugc.link/b9573045-7ea6-4e63-84fc-3fcce8ae7159/-/format/auto/-/stretch/off/-/resize/x3000/"><link rel="preload" fetchpriority="high" media="(max-width: 763px)" as="image" href="https://cdn.lugc.link/af147f76-90fd-42b0-9e45-83a2392de371/-/format/auto/-/stretch/off/-/resize/261x/"><script type="text/javascript" async="" charset="utf-8" src="./Kofo Akadri_files/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-3wmc1Bh1cCJW+fASaBmsSdAIwB8jgncUQXdLNwTeFRWYZhdATgEib2Aeg4rtm7Yi"></script><script>
+const verifyRecaptchaOnSubmit = function (e) {
+  e.preventDefault();
+  showButtonSpinner($(this));
+  const recaptchaAction = 'landing_form_submit';
+  let that = this;
+  grecaptcha.execute('6LdKrHsjAAAAABdQ3WpMFH24cXPVkm1YA-KQWjW-', {action: recaptchaAction})
+    .then(function (token) {
+        $(that).parents('form').prepend('<input type="hidden" name="g-recaptchav3-token" value="' + token + '">');
+        hideButtonSpinner($(that));
+        $(that).unbind('click', verifyRecaptchaOnSubmit).click();
+      }
+    );
+}
+
+const showButtonSpinner = function (button) {
+  let overlay = button.find('.widget-overlay');
+  overlay.css('color', button.css('color'))
+    .append('<i class="fa fa-spinner fa-spin"></i>');
+  button.css('color', 'transparent');
+}
+
+const hideButtonSpinner = function (button) {
+  let overlay = button.find('.widget-overlay');
+  button.css('color', '');
+  overlay.empty();
+}
+
+const injectRecaptchaScript = function () {
+  if (window.isRecaptchaScriptInjected) {
+    return;
+  }
+  
+  window.isRecaptchaScriptInjected = true;
+  let recaptchaScriptTag = document.createElement("script");
+  recaptchaScriptTag.type = "text/javascript";
+  recaptchaScriptTag.src = "https://www.google.com/recaptcha/api.js?render=6LdKrHsjAAAAABdQ3WpMFH24cXPVkm1YA-KQWjW-";
+  $("head").append(recaptchaScriptTag);
+}
+
+function initRecaptchaOnFormSubmit(formSelector) {  
+  let forms = $(formSelector).filter(function () {
+    return $('.g-recaptcha', this).length === 0;
+  });
+
+  if (forms.length > 0) {
+    injectRecaptchaScript();
+    forms.each(function () {
+      $('button[type="submit"]', this).click(verifyRecaptchaOnSubmit);
+    });
+  }
+}
+
+function initRecaptchaOnEvent(event) {
+  event.currentTarget.removeEventListener(event.type, initRecaptchaOnEvent);
+    
+  if (window.isRecaptchaInitialized) {
+    return;
+  }
+
+  window.isRecaptchaInitialized = true;
+  initRecaptchaOnFormSubmit('.widget-section form, .widget-smartsection form');
+}
+
+function waitForJQuery(method) {
+    if (window.jQuery) {
+        method(); 
+    } else {
+        setTimeout(function() { waitForJQuery(method) }, 100);
+    }
+}
+
+waitForJQuery(function () {
+  $('head').on('lightboxes-ready', function () {
+    if (window.isRecaptchaInitialized && !window.isRecaptchaInitializedForLightboxes) {
+      window.isRecaptchaInitializedForLightboxes = true;
+      initRecaptchaOnFormSubmit('.landingi-popup form');
+    } /* no else here, selector ".widget-section form" will bind forms from lightboxes on event */
+  });
+
+  document.addEventListener('scroll', initRecaptchaOnEvent);
+  document.addEventListener('mousemove', initRecaptchaOnEvent);
+  document.addEventListener('touchstart', initRecaptchaOnEvent);
+});
+</script><style>
+.grecaptcha-badge {
+    width: 70px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    left: -7px !important;
+    bottom: 10px !important;
+    transform: scale(0.8) !important;
+    z-index: 1000000 !important;
+}
+.grecaptcha-badge:hover {
+    width: 256px !important;
+    left: -2px !important;
+    transform: scale(1) !important;
+}
+
+@media (max-width:764px) {
+    .grecaptcha-badge {
+        width: 62px !important;
+        height: 55px !important;
+        bottom: 1px !important;
+    }
+}
+</style><script fetchpriority="high">
+   (function(src, cb) {
+    var s = document.createElement('script'); s.setAttribute('src', src); s.setAttribute('fetchpriority', 'high');
+    s.onload = cb; (document.head || document.body).appendChild(s);
+  })('https://ucarecdn.com/libs/blinkloader/3.x/blinkloader.min.js', function() {
+    window.Blinkloader.optimize({
+      fadeIn:false,
+      lazyload:true,
+      smartCompression:true,
+      responsive:true,
+      retina:true,
+      webp:true,
+      pubkey:'ca6af56c901b93c58ffa',
+      cdnBase:'https://cdn.lugc.link'
+    });
+    
+    if (window.location !== window.parent.location) {
+        window.onload = function() {
+            setTimeout(function () {
+                window.dispatchEvent(new CustomEvent('scroll'))
+            }, 500);
+        };
+    }
+  })
+</script><script src="./Kofo Akadri_files/blinkloader.min.js" fetchpriority="high"></script>
+<style>@media (min-width: 764px) { #P38wvwkBOITPa2RDf9tgTgaUHXHkFe7v { background-image: url("https://cdn.lugc.link/b9573045-7ea6-4e63-84fc-3fcce8ae7159/-/format/auto/-/stretch/off/-/resize/x3000/");}}</style><style>@media (min-width: 764px) { body #vwpwlPI7tpflaivAWgxeI8C8sbtOuUdh { background-image: url("https://cdn.lugc.link/af147f76-90fd-42b0-9e45-83a2392de371/-/format/auto/-/stretch/off/-/resize/360x/");}}</style><style>@media (max-width: 763px) { body #vwpwlPI7tpflaivAWgxeI8C8sbtOuUdh { background-image: url("https://cdn.lugc.link/af147f76-90fd-42b0-9e45-83a2392de371/-/format/auto/-/stretch/off/-/resize/261x/");}}</style>
+<meta property="og:title" content="Kofo Akadri"><meta property="og:description" content="Learn how to leverage technology and automation in your own business right from your phone and laptop"><meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/landingi-editor-uploads/7caP8nQRaFHdXIYS/Screenshot_2024_08_20_125031.png"><link href="./Kofo Akadri_files/css" type="text/css" rel="stylesheet" as="style" fetchpriority="high" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"><link href="./Kofo Akadri_files/css(1)" type="text/css" rel="stylesheet" as="style" fetchpriority="high" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"><link href="./Kofo Akadri_files/280125-landend-base.css" type="text/css" rel="stylesheet" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;"><link href="./Kofo Akadri_files/base.css" type="text/css" rel="stylesheet"><script>
+    var landingiInternalDetails = {
+        'landing_id': '1713009',
+        'landing_hash': 'ac1968d329ff416e8843',
+        'landing_variant_hash': '',
+        'landing_name': 'www.kofoakadri.com',
+        'landing_lang': 'en',
+        'account_uuid': '55ba489b-c199-4201-8399-f2d12fa11ea5',
+        'apikey': '873edaed-b2b7-41d7-ac64-159e522583af'
+   }
+</script><!-- Global site tag (gtag.js) - Google Ads: 723054314 -->
+<script async="" src="./Kofo Akadri_files/js"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-16713989333');
+</script><link href="./Kofo Akadri_files/body_2025-02-14-01-10-08.css" rel="stylesheet" type="text/css"><script>
+(async function (w, d) {
+    try {
+        const response = await w.fetch(
+            'https://' + 'tagmanager.landingi.io' + '/account/' + '55ba489b-c199-4201-8399-f2d12fa11ea5'
+        );
+        const gtm = await response.json();
+
+        if (gtm) {
+            const script = d.head.getElementsByTagName('script')[0];
+            const tmpl = d.createElement('template');
+            tmpl.innerHTML = gtm;
+            tmpl.content.childNodes.forEach((node) => {
+                let elem = node;
+
+                if ('SCRIPT' === node.nodeName) {
+                    elem = d.createElement('script');
+
+                    if (node.textContent) {
+                        elem.textContent = node.textContent;
+                    }
+
+                    if (node.src) {
+                        elem.src = node.src;
+                        elem.type = node.type;
+                    }
+
+                    script.parentNode.insertBefore(elem, script);
+                }
+
+                if ('STYLE' === node.nodeName) {
+                    elem = d.createElement('style');
+
+                    if (node.textContent) {
+                        elem.textContent = node.textContent;
+                    }
+
+                    script.parentNode.insertBefore(elem, script);
+                }
+            })
+        }
+    } catch (err) {
+        console.log(err);
+    }
+})(window, document);
+</script><script>
+window.lazySizesConfig = window.lazySizesConfig || {};
+window.lazySizesConfig.init = false;
+</script>
+<script data-cookieconsent="ignore" type="text/javascript" src="./Kofo Akadri_files/lazysizes.min.js"></script>
+<script>
+lazySizes.init();
+</script><script defer="" fetchpriority="low" src="./Kofo Akadri_files/install-code"></script><script defer="" fetchpriority="low" src="./Kofo Akadri_files/lightbox-render.js"></script><script>
+window.addEventListener('load', function () {
+    LightboxRender.init({
+        useAaf: true
+    })
+});
+</script><script type="text/javascript" async="" src="./Kofo Akadri_files/f.txt"></script><script type="text/javascript" src="./Kofo Akadri_files/api.js"></script></head><body id="P38wvwkBOITPa2RDf9tgTgaUHXHkFe7v">
+<div id="hZ4X3tXvZQqlv1pTVVTJIx6USaEICR7Z" class="widget widget-section ">
+    <div class="row">
+        
+        <div class="container ">
+            
+            <div id="WvIEvwqHi9w9Tlc5dbhKJhOyyQD4qvuJ" class="widget widget-text"><h1><font color="#e2e8e2">A Digital Business </font><b style="color: rgb(232, 175, 74);">For Everyone</b></h1></div><div id="kTZ8ZuByTPROWI9TsOblVDIuSPQ03BQO" class="widget widget-box"></div><img src="./Kofo Akadri_files/icon_c8e3788333a72b308b0387382eeedcc19372f198.svg" id="ahnhBoyhUbQF4zbSA78O5cudOAcknGO3" class="widget widget-svgicon" alt="Icon"><div id="AitZlgdPix7hI8LNW1cUt5gw5VHrTNMK" class="widget widget-text"><p>Plug in your Name and Email</p></div><div id="unpTVibUPtFdcFI0ft5yfaEDTfCLpJw9" class="widget widget-box"></div><img src="./Kofo Akadri_files/icon_c7fd5135b4efab15500ef8fe4e23f7e156eed305.svg" id="a7i8CTrdyIgHFAc6AnXTJtTcsVnOV01T" class="widget widget-svgicon" alt="Icon"><div id="mLX6OXmEs15TxnQ1WP81ZVtmrBEXLOKt" class="widget widget-text"><p>Watch the Webinar</p></div><img src="./Kofo Akadri_files/icon_dfdb9b14a874ae5722493fd6838f281310e453f3.svg" id="yRcTXUA8JIE2Xs1kCg0trNpom1ynrPRW" class="widget widget-svgicon" alt="Icon"><form id="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" class="widget widget-form" data-orientation="vertical" data-version="2.1" action="https://www.kofoakadri.com/submit/ac1968d329ff416e8843" enctype="multipart/form-data" method="post" novalidate="" data-hash="ac1968d329ff416e8843"><div id="pWGihRtUbdtrpbItQtbkVb7XXhEy8W4F" class="widget widget-container clearfix"><label id="k9LSLiGGUJHXsRP7FD1Lip3TyCHVCBEE" class="widget widget-text widget-regular-label widget-label" for="FN5bKCa0TbE82q4mIKqISDAxpUHLKLRs">Name</label><input class="widget widget-input-text" id="FN5bKCa0TbE82q4mIKqISDAxpUHLKLRs" type="text" subtype="name" placeholder="Name" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" name="first_name" value=""></div><div id="EoxZBWSecbTGFJUZqTuxLB7cIgNCdPuP" class="widget widget-container clearfix"><label id="UID6rNZhpkSUic5LZFGFylvyhUAFozFT" class="widget widget-text widget-regular-label widget-label" for="ydM8SiTOhU4DSrmE4kaiV4qGU0aOk2ws">Email</label><input class="widget widget-input-text" id="ydM8SiTOhU4DSrmE4kaiV4qGU0aOk2ws" type="email" subtype="email" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" placeholder="Email" name="email" value=""></div><div id="TsuS70GOtBfwFM1sgOBbwn2ktEsygGbV" class="widget widget-container input-button-container clearfix"><button class="widget widget-input-button" type="submit" id="OtweSVC9Adoogya3fZgl1Cn6wIavg7Vx" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF"><div class="widget-overlay"></div>FREE WEBINAR</button></div><div id="EzVdqI7T0TcpTuuF8xW3wkJun6AUDMzH" class="widget widget-container clearfix">
+    <input class="widget widget-input-checkbox" type="checkbox" id="t27g51kC2dSgRVvy0JPpED73HXsoVUTT" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" name="field[31]"><label id="KDoqtfKwCPL00mvPq2wC9QhiKgHE6AZV" class="widget widget-text widget-checkbox-label widget-label" for="t27g51kC2dSgRVvy0JPpED73HXsoVUTT"><span>I consent to having information about business programs emailed to me.</span></label>
+</div><input type="hidden" name="_name_" value=""><input type="hidden" name="_lead_uuid" value=""><input type="hidden" name="_uid" value="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF"><input type="hidden" name="_redirect" value=""></form><div id="Be68oydZ9igyrnSFoeGeQ6pAOdUHRCpP" class="widget widget-box "></div><div id="wQZzDInLPcUSkXa0xsr8SPJbd2nTy8Pz" class="widget widget-text"><p><a href="https://wa.link/1v2n29" target="_blank" style="color: rgb(93, 146, 255); text-decoration: none;"><b>CLICK HERE</b></a> to Contact on WhatsApp</p></div><div id="wibg7fRHeKNaFElTOBwo6sqTkCp0BH7n" class="widget widget-box"></div><img src="./Kofo Akadri_files/icon_4e8a1e545708863e5a84cd558fdf75dcb10fbeb9.svg" id="c6RNeOzhAW85FEKH4I1yWmzwneb3cFaZ" class="widget widget-svgicon" alt="Icon">
+        </div>
+    </div>
+</div>
+<div id="ebafa249f4e7af07b4949c08baa2699027c23c44" class="widget widget-section ">
+    <div class="row">
+        
+        <div class="container ">
+            
+            <div id="T4d52c2409c5874fd4dd4e26766c6b0eb10f472c" class="widget widget-text"><h2><span style="font-weight: normal; color: rgb(255, 255, 255);">Easy-to-use</span> <font color="#ffc24a"><b>Automated System</b></font></h2></div><div id="t20346cef7f50d13c8f6adc7bbcc278c0a16ed50" class="widget widget-text"><p>Learn how to leverage technology and automation in your own business right from your phone and laptop</p></div><div id="O830946b237864484264d73dedb1142490044957" class="widget widget-box"></div><div id="X340d5002d06d27623011fb842805f5c87f5f06e" class="widget widget-text"><p>Video-based Training</p></div><div id="c0f4a24750cc9ab1558697dcc54246efbae79a1b" class="widget widget-box"></div><div id="b1d410734ef6587046154343474ef8fde797ed3d" class="widget widget-text"><p>Low-cost Investment</p></div><div id="T03f669e9c982551cb9e1006f6a7c726aef9c0e3" class="widget widget-box"></div><div id="Z0b928da7085d6bb039d176c9b6500bda25625c9" class="widget widget-text"><p>Flexible Schedule</p></div><img id="Kb08918b5d6e0437079d17a5d6d90cc175d74502" width="37" height="40" data-original="https://images.assets-landingi.com/c8y2b1e4/02.png" class="widget widget-image" src="./Kofo Akadri_files/02.png" data-srcset="https://images.assets-landingi.com/WgubhVugl484JHTx/02.png 1x, https://images.assets-landingi.com/c8y2b1e4/02.png 2x" alt="" fetchpriority="high">
+<div id="e0b0029219395ec240ae93054f8788ee28a29bde" class="widget widget-text"><ul><li>Run your business from anywhere in the world.</li><li>A stream of income with minimal ongoing work.</li><li>Ongoing support and mentoring in global community.</li><li>Build your social media marketing strategy.</li></ul></div><div id="C9c5d3de3ea18b204e2d24943568c4fe13b73623" class="widget widget-box"></div><div id="Scb25c88d815e1350b6fa5241c99fc290388e304" class="widget widget-text"><p>Coaching &amp; Mentorship</p></div><img src="./Kofo Akadri_files/icon_4d5a8d08306fc02aa118ae95a80bfd2e0f59b65f.svg" id="re8a8e53297dceeede05a141f03eafe0cad62fe5" class="widget widget-svgicon" alt="Icon"><img src="./Kofo Akadri_files/icon_6cf0e113306495f225ae0c5acb3ca277e314b7cc.svg" id="df617315ca903a97df4c910fe8169aaff8b9abcd" class="widget widget-svgicon" alt="Icon"><img src="./Kofo Akadri_files/icon_4932e37fd74b84c27e109e5d86e6651071ed782a.svg" id="f9e966db9a13fb9cf70f4fb7ed87c03b4be25b53" class="widget widget-svgicon" alt="Icon">
+        </div>
+    </div>
+</div>
+<div id="d7BBuP9krTNwuulqQfaZt7hsqf9oS1fv" class="widget widget-section ">
+    <div class="row">
+        
+        <div class="container ">
+            
+            <div id="yG44onbkbHsR2cEk7A5eRwnBGWv9AGdu" class="widget widget-text"><p>Hi, I'm <font color="#e8af4a">Kofo</font></p></div><div id="DriE6Kk2Xwz5CezPWVqwq1LQilXadvpI" class="widget widget-text"><p>I've found this valuable venture through attending the webinar! Surrounding myself with knowledgeable and supportive individuals is my source of inspiration. It has made such a positive impact on my life, both personally and financially.</p></div><div id="zuIXFTOtVEPgJBXEDGIOVf922OWgk4aU" class="widget widget-text"><p>PRIORITIZING YOUR MENTAL AND PHYSICAL HEALTH, AS WELL AS SPENDING TIME WITH LOVED ONES?</p></div><div id="ZTp5TgFWGAQ2Xcf97QJQnZfUOPgz6EiT" class="widget widget-text"><p>Kofo Akadri</p></div><div id="vwpwlPI7tpflaivAWgxeI8C8sbtOuUdh" class="widget widget-box"></div><a href="https://www.kofoakadri.com/?gad_source=1&amp;gclid=CjwKCAiAqrG9BhAVEiwAaPu5zkKQqsMmivr-ypMT8-SOlDTXmZHGtki5AqFgkcgvnbVBZ6KqBqjHUxoCO5EQAvD_BwE#hZ4X3tXvZQqlv1pTVVTJIx6USaEICR7Z" id="oqC17r1ZMOOIRl6Ah4FcSMQFLTIdkhP1" aria-label="LEARN MORE" class="widget widget-button" version="3" subtype="anchor" rel="noopener noreferrer">
+    <div class="widget-overlay"></div>
+    <div id="mzAeJshgHaK3SEOF3tdAQsaQmwhgaMSl" class="widget widget-text">LEARN MORE</div>
+</a>
+        </div>
+    </div>
+</div>
+<div id="kNLPuNRuRIrd1vfpQVDiT2St0CvBbrEv" class="widget widget-section ">
+    <div class="row">
+        
+        <div class="container ">
+            
+            <div id="CIuF5tS4FuVdPQull641lIGaymPNmV0s" class="widget widget-text"><p><font color="#ffffff">What They Say</font><span style="font-weight: bold;"> <font color="#ffc24a">About Us</font></span></p></div>
+        </div>
+    </div>
+</div>
+<div id="hFb0cUTATgWGVmICHuaVyoQ4mw8g3ubd" class="widget widget-smartsection ">
+    <div class="row">
+        
+        <div class="container ">
+            
+            <div id="qSfafngklMOHrDnEbTFzV4S2RFP7WMt2" class="widget widget-text"><p><span style="font-weight: 400;">Karen &amp; Chris</span></p></div><div id="VDJN5IHgCnreZmfHN508eyfED9lU0f4f" class="widget widget-text"><p>We love that we can do this business part-time and still spend precious time with our children and grandchildren!</p></div><img id="xdJdXlkklcH6QrDziftkQBxxIVpcu0vx" width="140" height="140" class="widget widget-image lazyloaded" data-original="https://images.assets-landingi.com/uc/c716fec2-ea2b-40e2-a8f2-768489f3441e/Chris_Karen_McCallum_11.webp" data-src="https://images.assets-landingi.com/uc/c716fec2-ea2b-40e2-a8f2-768489f3441e/Chris_Karen_McCallum_11.webp" title="Lien &amp; Nathan Sikes" alt="Lien &amp; Nathan Sikes" decoding="async" src="./Kofo Akadri_files/Chris_Karen_McCallum_1 (1).webp">
+<div id="Z0xUq4hAnSc5Ex308J6bNmAprGgrAyZy" class="widget widget-text"><p>Coral</p></div><div id="nfKSUcozsFqBtl2AQ7PKWITBonaFTPGI" class="widget widget-text"><p>After an injury made desk work difficult, I was so fortunate to find this business. Now I work where I want, when I want!</p></div><img id="GmuIW0Q4mE25quIXTaZ1QwCgRIIGNanM" width="140" height="140" class="widget widget-image lazyloaded" data-original="https://images.assets-landingi.com/YO0zLPBM/Coral.jpeg" data-src="https://images.assets-landingi.com/YO0zLPBM/Coral.jpeg" title="Sen Hoang" alt="Sen Hoang" decoding="async" src="./Kofo Akadri_files/Coral.jpeg">
+<div id="HmMs3ITqrghbUTRl5KTHTGXmOE1hriDR" class="widget widget-text"><p>Matt</p></div><div id="ezR6ktpSurq7ad9SNxekIBLbVT6l0fHh" class="widget widget-text"><p>I was always looking for a better way to earn a living and now, I finally found it! This business has delivered more family time as well as set me up financially for a worry free retirement.</p></div><img id="rGUKAIOWEJTdLH2sDiMyx28J4BTJgUmq" width="140" height="140" class="widget widget-image lazyloaded" data-original="https://images.assets-landingi.com/WiUSk6DG/2021_8_24_10.11.32.943.jpeg" data-src="https://images.assets-landingi.com/WiUSk6DG/2021_8_24_10.11.32.943.jpeg" title="Kevin Nguyen" alt="Kevin Nguyen" decoding="async" src="./Kofo Akadri_files/2021_8_24_10.11.32.943.jpeg">
+
+        </div>
+    </div>
+</div>
+<div id="oMTmNVAtQ9Ek54NviU4XpcLA577dTApE" class="widget widget-section ">
+    <div class="row">
+        
+        <div class="container ">
+            
+            <div id="vXXhg0ocu6TORf3C44KgadSwg0FnSAWb" class="widget widget-text"><p><span style="text-transform: uppercase;"><b>" IF WE BELIEVE THAT TOMORROW WILL BE BETTER, YOU CAN BEAR A HARDSHIP TODAY. "</b></span></p></div><div id="aTkPgJA6K5m25qR6Fd07mCZxvKeJxJq5" class="widget widget-text"><p><span style="font-style: italic;">- Thích Nhất Hạnh -</span><br></p></div><a href="https://www.kofoakadri.com/?gad_source=1&amp;gclid=CjwKCAiAqrG9BhAVEiwAaPu5zkKQqsMmivr-ypMT8-SOlDTXmZHGtki5AqFgkcgvnbVBZ6KqBqjHUxoCO5EQAvD_BwE#hZ4X3tXvZQqlv1pTVVTJIx6USaEICR7Z" id="TTFs9CzN71zOBPHS4ZA0gN7B8PbkKQpp" aria-label="LEARN MORE" class="widget widget-button" version="3" subtype="anchor" rel="noopener noreferrer">
+    <div class="widget-overlay"></div>
+    <div id="wELMTTU4inQZiRDosAcdlTcvJXsxTNkz" class="widget widget-text">LEARN MORE</div>
+</a>
+        </div>
+    </div>
+</div>
+<div id="STcQzNnsbUS4zC6TytNAxtSDPQvWKPho" class="widget widget-section ">
+    <div class="row">
+        
+        <div class="container ">
+            
+            <div id="kWQEpkU1Ev8Z8kEZFvPbwM5NLhX3aSPK" class="widget widget-text"><p>Copyright © www.kofoakadri.com</p><p>All Rights Reserved</p></div><div id="wT9m72d0NpH8hb6v5PZD1XgNCVttGgDi" class="widget widget-text"><p>*As with any business, results will vary and cannot be guaranteed.</p></div><a href="https://www.kofoakadri.com/button/sMoTdVTPVrEXuLWHJJ9esFh9RmviCBCT" id="sMoTdVTPVrEXuLWHJJ9esFh9RmviCBCT" aria-label="Terms | Privacy Policy &amp; Disclaimer" class="widget widget-button" version="3" target="_blank" rel="noopener noreferrer" data-target-url="https://www.kofoakadri.com/privacypolicy">
+    <div class="widget-overlay"></div>
+    <div id="aTTGW8p1Ood5VThK6vxMSWDZL32mPrqz" class="widget widget-text">Terms | Privacy Policy &amp; Disclaimer</div>
+</a>
+        </div>
+    </div>
+</div><script type="text/javascript" src="./Kofo Akadri_files/jquery-3-6-0.min.js" fetchpriority="high"></script><script defer="" type="text/javascript" src="./Kofo Akadri_files/030724-anchors.js"></script>        <script src="./Kofo Akadri_files/frodo.js"></script>
+<script>
+const lpStatsModule = (function () {    
+    const url = "https://stats.landingi.com/visit/1713009";
+    const data = {"lid":1713009,"luuid":"5770dbbe-d08f-42fd-9893-95cc99902ea6","lhash":"ac1968d329ff416e8843","fid":1713009,"auuid":"55ba489b-c199-4201-8399-f2d12fa11ea5","acid":287507,"agid":159629,"tid":null,"hasAccessToEventTracker":false,"hasAccessToEventTrackerDev":false,"hasAccessToEventTrackerData":false,"hasAccessToVisitWithoutCookie":false,"hasAccessToVisitWithLocalStorage":false,"hasAccessToExternalEvents":false};
+    const cookieName = "ls_sid_1713009";
+
+    if (data.hasAccessToEventTrackerDev) { 
+        console.log('Running runScript in dev mode')
+        frodo.runScriptDev(cookieName, url, data)
+    } else {
+        frodo.runScript(cookieName, url, data)
+    }
+
+    return {
+        getData: function() { return data; },
+        cookieName: function() { return cookieName; },
+        endpoint: function() { return url; },
+        path: function() { return path; }
+    };
+})();
+</script><script defer="" type="text/javascript" src="./Kofo Akadri_files/files.js"></script><script defer="" fetchpriority="low" type="text/javascript" src="./Kofo Akadri_files/jquery.form.min.js"></script> <script type="text/javascript" src="./Kofo Akadri_files/new_landend.js"></script><link rel="stylesheet" href="./Kofo Akadri_files/font-awesome.min.css">
+        <style>
+          .landend-infobar-light {
+            position: fixed;
+            bottom:0;
+            width: 100%;
+            min-height: 55px;
+            line-height: 1.3;
+            font-family: Arial;
+            font-size:14px;
+            color:#000000;
+            background: #ffffff;
+            z-index: 999999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex: grid;
+          }
+
+          .landend-infobar-text {
+            width: 100%;
+            text-align: center;
+            margin: 10px 50px;
+          }
+
+          .landend-infobar-actions {
+            min-width: -webkit-fit-content;
+            min-width: -moz-fit-content;
+            min-width: fit-content;
+            margin-right: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+          }
+
+          .landend-infobar-light-btn {
+            cursor: pointer;
+            padding: 0 20px;
+            text-decoration: none;
+            height: 35px;
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            color: #000000;
+            display: grid;
+            place-items: center;
+          }
+
+          .landend-infobar-light-btn:hover {
+            text-decoration: none;
+            background-color: #000000;
+            color: #ffffff;
+          }
+
+          .landend-infobar-light-agree-btn {
+            cursor: pointer;
+            padding: 0 20px;
+            height: 35px;
+            background-color: #000000;
+            color: #ffffff;
+            display: grid;
+            place-items: center;
+          }
+
+          .landend-infobar-light-agree-btn:hover {
+            text-decoration: none;
+            background-color: #2F2F2F;
+            color: #ffffff;
+          }
+
+          @media screen and (max-width: 700px) {
+            .landend-infobar-light {
+              flex-wrap: wrap;
+            }
+
+            .landend-infobar-text {
+              margin: 10px 20px;
+            }
+
+            .landend-infobar-actions {
+              width: 100%;
+              margin: 10px 20px 20px 20px;
+              justify-content: center;
+              flex-wrap: wrap;
+            }
+          }
+      </style><div class="landend-infobar-light">
+                            <span class="landend-infobar-text">We and our partners use cookies to deliver our services. By using our website, you agree to the use of cookies as described in our privacy policy.</span>
+                            <div class="landend-infobar-actions">
+                                <a href="https://www.kofoakadri.com/privacypolicy" target="_blank" class="landend-infobar-light-btn">LEARN MORE</a>
+                                <a target="_blank" class="landend-infobar-light-agree-btn infobar-close">Agree</a>
+                            </div>
+                        </div><iframe allow="join-ad-interest-group" data-tagging-id="AW-16713989333" data-load-time="1739802001271" height="0" width="0" src="./Kofo Akadri_files/16713989333.html" style="display: none; visibility: hidden;"></iframe><iframe height="0" width="0" style="display: none; visibility: hidden;" src="./Kofo Akadri_files/saved_resource.html"></iframe><script>
+                    $(function() {
+                        if (Cookies.get("infobar-close")) {
+                            $(".infobar-close").parent().parent().remove();
+                        }
+                        $(".infobar-close").on("click", function (event) { event.preventDefault();
+                            Cookies.set("infobar-close", 1, { expires: 30 });
+                            $(this).parent().parent().remove();
+                        });
+                    });
+                </script><div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation" name="a-mrmmr8m22kxb" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="./Kofo Akadri_files/anchor.html"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./Kofo Akadri_files/saved_resource(1).html"></iframe></div></body></html>
