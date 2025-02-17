@@ -72,3 +72,13 @@
     flex-wrap: wrap;
     }
     }
+
+    #WvIEvwqHi9w9Tlc5dbhKJhOyyQD4qvuJ {
+        top: 33px !important;
+    }
+
+    @media only screen and (max-width: 763px) {
+        #WvIEvwqHi9w9Tlc5dbhKJhOyyQD4qvuJ {
+            font-size: 35px !important;
+        }
+    }
