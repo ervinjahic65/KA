@@ -35,8 +35,8 @@
                     </div>
                     <img src="files/icon_dfdb9b14a874ae5722493fd6838f281310e453f3.svg" id="yRcTXUA8JIE2Xs1kCg0trNpom1ynrPRW" class="widget widget-svgicon" alt="Icon">
                     <form id="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" class="widget widget-form" data-orientation="vertical" data-version="2.1" enctype="multipart/form-data" data-hash="ac1968d329ff416e8843">
-                        <div id="pWGihRtUbdtrpbItQtbkVb7XXhEy8W4F" class="widget widget-container clearfix"><label id="k9LSLiGGUJHXsRP7FD1Lip3TyCHVCBEE" class="widget widget-text widget-regular-label widget-label" for="FN5bKCa0TbE82q4mIKqISDAxpUHLKLRs">Name</label><input class="widget widget-input-text" id="FN5bKCa0TbE82q4mIKqISDAxpUHLKLRs" type="text" subtype="name" placeholder="Name" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" name="first_name" value=""></div>
-                        <div id="EoxZBWSecbTGFJUZqTuxLB7cIgNCdPuP" class="widget widget-container clearfix"><label id="UID6rNZhpkSUic5LZFGFylvyhUAFozFT" class="widget widget-text widget-regular-label widget-label" for="ydM8SiTOhU4DSrmE4kaiV4qGU0aOk2ws">Email</label><input class="widget widget-input-text" id="ydM8SiTOhU4DSrmE4kaiV4qGU0aOk2ws" type="email" subtype="email" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" placeholder="Email" name="email" value=""></div>
+                        <div id="pWGihRtUbdtrpbItQtbkVb7XXhEy8W4F" class="widget widget-container clearfix"><label id="k9LSLiGGUJHXsRP7FD1Lip3TyCHVCBEE" class="widget widget-text widget-regular-label widget-label" for="FN5bKCa0TbE82q4mIKqISDAxpUHLKLRs">Name</label><input class="widget widget-input-text" id="FN5bKCa0TbE82q4mIKqISDAxpUHLKLRs" type="text" subtype="name" placeholder="Name" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" name="first_name" value="" required></div>
+                        <div id="EoxZBWSecbTGFJUZqTuxLB7cIgNCdPuP" class="widget widget-container clearfix"><label id="UID6rNZhpkSUic5LZFGFylvyhUAFozFT" class="widget widget-text widget-regular-label widget-label" for="ydM8SiTOhU4DSrmE4kaiV4qGU0aOk2ws">Email</label><input class="widget widget-input-text" id="ydM8SiTOhU4DSrmE4kaiV4qGU0aOk2ws" type="email" subtype="email" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" placeholder="Email" name="email" value="" required></div>
                         <div id="TsuS70GOtBfwFM1sgOBbwn2ktEsygGbV" class="widget widget-container input-button-container clearfix">
                             <button class="widget widget-input-button" type="submit" id="OtweSVC9Adoogya3fZgl1Cn6wIavg7Vx" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF">
                                 <div class="widget-overlay"></div>
@@ -44,10 +44,22 @@
                             </button>
                         </div>
                         <div id="EzVdqI7T0TcpTuuF8xW3wkJun6AUDMzH" class="widget widget-container clearfix">
-                            <input class="widget widget-input-checkbox" type="checkbox" id="t27g51kC2dSgRVvy0JPpED73HXsoVUTT" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" name="field[31]"><label id="KDoqtfKwCPL00mvPq2wC9QhiKgHE6AZV" class="widget widget-text widget-checkbox-label widget-label" for="t27g51kC2dSgRVvy0JPpED73HXsoVUTT"><span>I consent to having information about business programs emailed to me.</span></label>
+                            <input class="widget widget-input-checkbox" type="checkbox" id="t27g51kC2dSgRVvy0JPpED73HXsoVUTT" parentid="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF" name="field[31]" required><label id="KDoqtfKwCPL00mvPq2wC9QhiKgHE6AZV" class="widget widget-text widget-checkbox-label widget-label" for="t27g51kC2dSgRVvy0JPpED73HXsoVUTT"><span>I consent to having information about business programs emailed to me.</span></label>
                         </div>
-                        <input type="hidden" name="_name_" value=""><input type="hidden" name="_lead_uuid" value=""><input type="hidden" name="_uid" value="fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF"><input type="hidden" name="_redirect" value="">
                     </form>
+                    <script>
+                      document.getElementById("fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF").addEventListener("submit", function (e) {
+                          e.preventDefault();
+                    
+                          document.getElementById("fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF").innerHTML = 
+                              '<div style="text-align:center;"><img src="files/loading.gif" style="width:80px;" alt="Loading"></div>';
+                    
+                          setTimeout(() => {
+                              document.getElementById("fE8l1TTRA5QJl4RG37RvUuTvGpsSZPJF").innerHTML = 
+                                  '<div style="text-align:center;"><p style="font-size:18px; color:white; font-weight:700;">Thank you for registering. A representative will contact you shortly.</p></div>';
+                          }, 2000);
+                      });
+                    </script>                    
                     <div id="Be68oydZ9igyrnSFoeGeQ6pAOdUHRCpP" class="widget widget-box "></div>
                     <div id="wQZzDInLPcUSkXa0xsr8SPJbd2nTy8Pz" class="widget widget-text">
                         <p>Contact on WhatsApp</p>
