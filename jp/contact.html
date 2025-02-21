@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせ - Heroes Heart Media</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="files/logo.png" sizes="16x16">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-[#43694f] text-white sticky top-0 z-50">
+      <div class="container mx-auto flex items-center justify-between p-4">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="files/logo.png" alt="ロゴ" class="h-24 mr-3" />
+        </div>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-gray-300">ホーム</a>
+          <a href="about.html" class="hover:text-gray-300">私たちについて</a>
+          <a href="contact.html" class="hover:text-gray-300">お問い合わせ</a>
+          <a href="privacy.html" class="hover:text-gray-300">プライバシーポリシー</a>
+          <a href="terms.html" class="hover:text-gray-300">利用規約</a>
+        </nav>
+        <!-- Mobile Hamburger Menu Button -->
+        <div class="md:hidden">
+          <button id="menuButton" class="focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Navigation Menu -->
+      <div id="mobileMenu" class="md:hidden hidden bg-[#43694f] text-white">
+        <nav class="flex flex-col space-y-2 p-4">
+          <a href="index.html" class="hover:text-gray-300">ホーム</a>
+          <a href="about.html" class="hover:text-gray-300">私たちについて</a>
+          <a href="contact.html" class="hover:text-gray-300">お問い合わせ</a>
+          <a href="privacy.html" class="hover:text-gray-300">プライバシーポリシー</a>
+          <a href="terms.html" class="hover:text-gray-300">利用規約</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container mx-auto p-6 bg-white shadow-md my-6">
+      <h1 class="text-3xl font-bold mb-4 text-[#43694f]">お問い合わせ</h1>
+      <div class="text-gray-700 leading-relaxed space-y-6">
+        <p>
+          Heroes Heart Mediaでは、お客様の質問、フィードバック、提案を大切にしています。サポートが必要な場合、パートナーシップの機会について話し合いたい場合、またはデジタルビジネスソリューションに関するお問い合わせがある場合、私たちのチームがお手伝いいたします。
+        </p>
+        <p>
+          以下のフォームにご記入いただくと、できるだけ早くご連絡いたします。また、オフィスへの訪問や電話、メールでのお問い合わせも歓迎いたします。お客様のご意見は、私たちのサービスを改善し、成功への道をサポートするために非常に重要です。
+        </p>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Contact Form -->
+          <div>
+            <form id="form" class="space-y-4">
+              <div>
+                <label for="name" class="block font-medium">名前</label>
+                <input type="text" id="name" name="name" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+              </div>
+              <div>
+                <label for="email" class="block font-medium">メール</label>
+                <input type="email" id="email" name="email" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+              </div>
+              <div>
+                <label for="subject" class="block font-medium">件名</label>
+                <input type="text" id="subject" name="subject" class="mt-1 block w-full p-2 border border-gray-300 rounded" required>
+              </div>
+              <div>
+                <label for="message" class="block font-medium">メッセージ</label>
+                <textarea id="message" name="message" rows="5" class="mt-1 block w-full p-2 border border-gray-300 rounded" required></textarea>
+              </div>
+              <button type="submit" class="bg-[#43694f] text-white px-4 py-2 rounded hover:bg-green-700">
+                メッセージを送信
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#43694f] text-white">
+      <div class="container mx-auto p-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <!-- Company Info -->
+          <div>
+            <p class="mb-2">주소: 서울특별시 중구 서소문동 21-1</p>
+            <p class="mb-2">전화: +34 986 227 374</p>
+            <p class="mb-2">법인 등록 번호: 4010501096087</p>
+          </div>
+          <!-- Copyright -->
+          <div class="text-right">
+            <p>著作権 © 2025 Heroes Heart Media. 無断複写・転載を禁じます。.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+    <script>
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+      
+            document.getElementById("form").innerHTML = 
+                '<div style="text-align:center;"><img src="files/loading.gif" style="width:80px;" alt="読み込み中"></div>';
+      
+            setTimeout(() => {
+                document.getElementById("form").innerHTML = 
+                    '<div style="text-align:center;"><p style="font-size:18px; color:black; font-weight:700;">ご登録ありがとうございます。担当者からすぐにご連絡いたします。</p></div>';
+            }, 2000);
+        });
+    </script> 
+  </body>
+</html>
